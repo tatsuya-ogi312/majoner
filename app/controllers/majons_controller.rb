@@ -31,29 +31,50 @@ class MajonsController < ApplicationController
 
     # 雀頭抜き取り（一盃口ケア）
     j = 0
-    while j < 8 do
-      if mcntr[j] == 2 && (mcntr[j+1] >= 1 && mcntr[j+2] >= 1)
-        jantocnt += 1
-        mcntr[j] -= 2
+    while j < 9 do
+      if j <= 6
+        if mcntr[j] == 2 && (mcntr[j+1] <= 1 && mcntr[j+2] <= 1)
+          jantocnt += 1
+          mcntr[j] -= 2
+        end
+        if pcntr[j] == 2 && (pcntr[j+1] <= 1 && pcntr[j+2] <= 1)
+          jantocnt += 1
+          pcntr[j] -= 2
+        end
+        if scntr[j] == 2 && (scntr[j+1] <= 1 && scntr[j+2] <= 1)
+          jantocnt += 1
+          scntr[j] -= 2
+        end
+        if zcntr[j] == 2
+            jantocnt += 1
+            zcntr[j] -= 2
+        end
       end
-      if pcntr[j] == 2 && (pcntr[j+1] >= 1 && pcntr[j+2] >= 1)
-        jantocnt += 1
-        pcntr[j] -= 2
-      end
-      if scntr[j] == 2 && (scntr[j+1] >= 1 && scntr[j+2] >= 1)
-        jantocnt += 1
-        scntr[j] -= 2
-      end
-      if zcntr[j] == 2
-        jantocnt += 1
-        zcntr[j] -= 2
+      if j >= 7
+        if mcntr[j] == 2
+          jantocnt += 1
+          mcntr[j] -= 2
+        end
+        if pcntr[j] == 2
+          jantocnt += 1
+          pcntr[j] -= 2
+        end
+        if scntr[j] == 2
+          jantocnt += 1
+          scntr[j] -= 2
+        end
+        if zcntr[j] == 2
+            jantocnt += 1
+            zcntr[j] -= 2
+        end
+
       end
       j += 1
     end
   
     # 刻子抜き取り
     k = 0
-    while k < 8 do
+    while k < 9 do
       if mcntr[k] >= 3
         kotsucnt += 1
         mcntr[k] -= 2
@@ -66,7 +87,7 @@ class MajonsController < ApplicationController
         kotsucnt += 1
         scntr[k] -= 2
       end
-      if k < 7
+      if k < 6
         if zcntr[k] >= 3
           kotsucnt += 1
           zcntr[k] -= 2
@@ -77,7 +98,7 @@ class MajonsController < ApplicationController
   
     # 順子抜き取り
     s = 0
-    while s < 6 do
+    while s < 7 do
       if mcntr[s] == 1 && mcntr[s+1] == 1 && mcntr[s+2] == 1
         shuntsucnt += 1
         mcntr[s] -= 2
@@ -93,7 +114,7 @@ class MajonsController < ApplicationController
       s += 1
     end
 
-    @now_shanten = minishanten - (kotsucnt * 2) - (shuntsucnt * 2) - (jantocnt)
+    @now_shanten = minishanten - ((kotsucnt * 2) + (shuntsucnt * 2) + jantocnt)
   end
 
 
