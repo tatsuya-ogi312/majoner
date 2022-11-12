@@ -15,24 +15,32 @@ class Pai
   end
 
   def shanten
-    mcounter = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    scounter = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    pcounter = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    zcounter = [0, 0, 0, 0, 0, 0, 0]
+    mcntr = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    scntr = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    pcntr = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    zcntr = [0, 0, 0, 0, 0, 0, 0]
+    kotsucnt = 0
+    shunthucnt = 0
     @haipai.each do |pai|
       pai_num = pai.split(/\s*/)
       val = pai_num[1].to_i - 1
       case pai_num[0]
       when "m" then
-        mcounter[val] += 1
+        mcntr[val] += 1
       when "p" then
-        pcounter[val] += 1
+        pcntr[val] += 1
       when "s" then
-        scounter[val] += 1
+        scntr[val] += 1
       when "z" then
-        zcounter[val] += 1
+        zcntr[val] += 1
       end
     end
+  end
+
+  tehaibox = mcntr + pcntr + scntr + zcntr
+
+  i = 0
+  while i < 30 do
   end
 
 end
