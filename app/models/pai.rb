@@ -14,6 +14,4 @@ class Pai
     @haipai.sort
   end
 
-  def shanten
-  end
 end
