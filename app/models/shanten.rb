@@ -29,7 +29,7 @@ class Shanten
     ranmencnt = 0
     kanchancnt = 0
     penchancnt = 0
-    # 雀頭抜き取り（一盃口ケア）
+    # 雀頭抜き取り
     j = 0
     while j < 9 do
       if j <= 6

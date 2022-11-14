@@ -2,5 +2,11 @@
   <%= image_tag "#{pai}.gif", class:"#" %>
 <% end %>
 <div class="shanten">
+  <% if @shanten <= -1%>
+  <p>自摸</p>
+  <% elsif @shanten == 0 %>
+  <p>聴牌</p>
+  <% else %>
   <p><%= @shanten %>シャンテン</p>
+  <% end %>
 </div>

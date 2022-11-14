@@ -6,7 +6,6 @@ class MajonsController < ApplicationController
     @ripai = haipai.sort
     huriwake = Shanten.new(@ripai)
     @shanten = huriwake.hantei
-
   end
 
 
