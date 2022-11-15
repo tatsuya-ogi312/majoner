@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title{
+  width: 100vw;
+  text-align: center;
+  font-size: 40px;
+  line-height: 75px;
+  color: white;
+  text-shadow: 1px 1px 0 #000;
+  /* 虹色グラデーション編集CSS  */
+  background : linear-gradient(to right,
+                               red,
+                               orange,
+                               yellow,
+                               green,
+                               aqua,
+                               blue,
+                               purple);
+}
+
+.content-box {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shanten {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}

@@ -1,12 +1,21 @@
-<% @ripai.each do |pai| %>
-  <%= image_tag "#{pai}.gif", class:"#" %>
-<% end %>
-<div class="shanten">
-  <% if @shanten <= -1%>
-  <p>自摸</p>
-  <% elsif @shanten == 0 %>
-  <p>聴牌</p>
-  <% else %>
-  <p><%= @shanten %>シャンテン</p>
-  <% end %>
+<div class="main">
+  <div class="title">
+    目指せ天和！！
+  </div>
+  <div class="content-box">
+    <div class="haipai">
+      <% @ripai.each do |pai| %>
+        <%= image_tag "#{pai}.gif", class:"#" %>
+      <% end %>
+    </div>
+    <div class="shanten">
+      <% if @shanten <= -1%>
+      <p>自摸</p>
+      <% elsif @shanten == 0 %>
+      <p>聴牌</p>
+      <% else %>
+      <p><%= @shanten %>シャンテン</p>
+      <% end %>
+    </div>
+  </div>
 </div>

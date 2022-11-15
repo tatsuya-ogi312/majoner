@@ -32,7 +32,6 @@ class Shanten
     # 雀頭抜き取り
     j = 0
     while j < 9 do
-      if j <= 6
         if @mcntr[j] == 2
           jantocnt += 1
           @mcntr[j] -= 2
@@ -49,7 +48,6 @@ class Shanten
             jantocnt += 1
             @zcntr[j] -= 2
         end
-      end
       j += 1
       sleep 0.01
     end
@@ -112,12 +110,12 @@ class Shanten
         @mcntr[r] -= 1
         @mcntr[r+1] -= 1
       end
-      if @pcntr[r] == 1 && @pcntr[r+1] == 1 && @pcntr[r+2] == 1
+      if @pcntr[r] == 1 && @pcntr[r+1] == 1
         ranmencnt += 1
         @pcntr[r] -= 1
         @pcntr[r+1] -= 1
       end
-      if @scntr[r] == 1 && @scntr[r+1] == 1 && @scntr[r+2] == 1
+      if @scntr[r] == 1 && @scntr[r+1] == 1
         ranmencnt += 1
         @scntr[r] -= 1
         @scntr[r+1] -= 1
@@ -170,7 +168,12 @@ class Shanten
       sleep 0.01
     end
 
-    return now_shanten = min_shanten - (jantocnt + (kotsucnt * 2) + (shuntsucnt * 2) + ranmencnt + penchancnt + kanchancnt)
+    now_shanten = min_shanten - (jantocnt + (kotsucnt * 2) + (shuntsucnt * 2) + ranmencnt + penchancnt + kanchancnt)
 
+    if now_shanten == -1 && jantocnt == 0
+      return now_shanten + 1
+    else
+      return now_shanten
+    end
   end
 end
