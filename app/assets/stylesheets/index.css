@@ -36,3 +36,18 @@
   font-size: 30px;
   font-weight: bold;
 }
+
+.charenge-btn {
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  background-color: red;
+  border-radius: 3px;
+}
+
+.load_btn {
+  font-size: 20px;
+  text-decoration: none;
+  line-height: 50px;
+  color: white;
+}
