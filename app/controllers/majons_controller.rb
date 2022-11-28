@@ -4,10 +4,13 @@ class MajonsController < ApplicationController
     majon_pais = Pai.new
     haipai = majon_pais.haipai
     @ripai = haipai.sort
-    # @ripai = ["m2", "m6", "m8", "m9", "m9", "p6", "p7", "p8", "p8", "p9", "s4", "s9", "z4", "z4"]
+    @ripai = ["m1", "m1", "m1", "m3", "m3", "m3", "p2", "p2", "p2", "s4", "s4", "s4", "s5", "s5"]
     huriwake = Shanten.new(@ripai)
     @shanten = huriwake.hantei
+    yaku = Yaku.new(@ripai)
+    @yakuall = yaku.yakuhantei
   end
+
 
 
 end
