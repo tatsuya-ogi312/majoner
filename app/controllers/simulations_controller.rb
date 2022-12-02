@@ -12,7 +12,7 @@ class SimulationsController < ApplicationController
         if @shanten == -1
           return ripai
         end
-        sleep 0.01
+        sleep 0.001
     end
     @ripai = ripai
   end
